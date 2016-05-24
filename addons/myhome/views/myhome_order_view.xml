@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="myhome_order_view_tree" model="ir.ui.view">
+            <field name="name">myhome.order.view.tree</field>
+            <field name="model">myhome.order</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="order_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="myhome_order_view_form" model="ir.ui.view">
+            <field name="name">myhome.order.view.form</field>
+            <field name="model">myhome.order</field>
+            <field name="arch" type="xml">
+                <form string="Bank">
+                    <header>
+                        <button name="action_confirm" string="Confirm" type="object"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="order_date"/>
+                        </group>
+                        <notebook>
+                            <page string="Bank">
+                                <group>
+                                    <field name="order_line">
+                                        <tree editable="bottom">
+                                            <field name=""/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="myhome_order_action" model="ir.actions.act_window">
+            <field name="name">myhome.order.action</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">myhome.order</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+              </p><p>
+                <!-- More details about what a user can do with this object will be OK -->
+              </p>
+            </field>
+        </record>
+
+        <menuitem id="myhome_order_menu_action"
+                  name="Order"
+                  parent="myhome_bank_menu_categ"
+                  action="myhome_order_action"
+                  sequence="2"/>
+    </data>
+</openerp>

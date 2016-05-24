@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <menuitem id="menu_mrp_report" name="Report" parent="base.menu_mrp_root" sequence=""/>
+    </data>
+</openerp>

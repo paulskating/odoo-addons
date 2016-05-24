@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="can_not_delete_field_boolean_true" model="ir.rule">
+            <field name="name">can_not_delete_field_boolean_true</field>
+            <field name="model_id" ref="todo.model_todo_thing"/>
+            <field name="domain_force">[('field_Boolean', '=', False)]</field>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_unlink" eval="1"/>
+            <!-- You can attach this rule to a specific group, Or make it Global -->
+            <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+            <!--<field name="global" eval="1"/> -->
+        </record>
+    </data>
+</openerp>

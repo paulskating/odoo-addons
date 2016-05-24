@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="product_normal_form_view" model="ir.ui.view">
+            <field name="name">product.product.form</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//label[@for='incoming_qty']" position="before">
+                    <newline/>
+                    <field name="qty_in_stock"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

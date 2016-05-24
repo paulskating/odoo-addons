@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--<record id="report_production_insufficient_wizard_view_form" model="ir.ui.view">-->
+            <!--<field name="name">report_production_insufficient_wizard_view_form</field>-->
+            <!--<field name="model">mrp_insufficient_material.report_production_insuf_wizard</field>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<form string="">-->
+                    <!--<sheet>-->
+                        <!--<h1>制令缺料状况表向导</h1>-->
+                    <!--</sheet>-->
+                    <!--<footer>-->
+                        <!--<button type="object" name="action_print" string="Print" class="oe_highlight"/>-->
+                        <!--<button special="cancel" string="Cancel"/>-->
+                    <!--</footer>-->
+                <!--</form>-->
+            <!--</field>-->
+        <!--</record>-->
+
+        <record id="report_production_insufficient_wizard_view_form" model="ir.ui.view">
+            <field name="name">report_production_insufficient_wizard_view_form</field>
+            <field name="model">mrp_insufficient_material.report_production_insuf_wizard</field>
+            <field name="inherit_id" ref="mrp_insufficient_material.report_product_insufficient_wizard_view_form"/>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <xpath expr="//h1" position="replace">
+                    <h1>制令缺料状况表向导</h1>
+                </xpath>
+            </field>
+        </record>
+
+        <act_window id="report_production_insufficient_wizard_action" name="Production Insufficient"
+                    res_model="mrp_insufficient_material.report_production_insuf_wizard"
+                    view_mode="form" target="new" multi="False"/>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="report_production_insufficient_menu" name="" parent="mrp_insufficient_material.menu_mrp_report"
+                  action="mrp_insufficient_material.report_production_insufficient_wizard_action"
+                  sequence=""/>
+    </data>
+</openerp>

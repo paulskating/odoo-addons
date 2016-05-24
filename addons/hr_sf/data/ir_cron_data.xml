@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="ir_cron_attendance_adjust" model="ir.cron">
+            <field name="name">attendance adjust</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="doall">True</field>
+            <field name="active">True</field>
+            <field name="model">hr.attendance</field>
+            <field name="function">adjust</field>
+            <field name="args">(None,None)</field>
+        </record>
+    </data>
+</openerp>

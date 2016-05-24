@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="absent_holidays_status" model="hr.holidays.status">
+            <field name="name">旷职</field>
+            <field name="color_name">red</field>
+        </record>
+    </data>
+</openerp>

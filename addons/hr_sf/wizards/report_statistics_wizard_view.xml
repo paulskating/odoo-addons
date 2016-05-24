@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="report_statistics_wizard_view_form" model="ir.ui.view">
+            <field name="name">report_statistics_wizard.view.form</field>
+            <field name="model">hr_sf.report_statistics_wizard</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <h1>出勤统计表向导</h1>
+                        <group>
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+                            <field name="filter_by" widget="radio"/>
+                            <field name="employee_ids" attrs="{'invisible':[('filter_by','!=','employee')]}">
+                                <tree>
+                                    <field name="internal_code"/>
+                                    <field name="name"/>
+                                    <field name="department_id"/>
+                                    <field name="job_id"/>
+                                </tree>
+                            </field>
+                            <field name="department_ids" attrs="{'invisible':[('filter_by','!=','department')]}"/>
+
+                            <field name="repeat_header"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button type="object" name="action_OK" string="Print Report" class="oe_highlight"/>
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="report_statistics_wizard_action" name="Attendance Statistics"
+                    res_model="hr_sf.report_statistics_wizard" view_mode="form" target="new" multi="False"/>
+
+        <menuitem id="menu_report_attendance_statistics" name="Statistics" parent="attendance_report_cate"
+                  action="report_statistics_wizard_action" groups="base.group_hr_manager" sequence=""/>
+    </data>
+</openerp>

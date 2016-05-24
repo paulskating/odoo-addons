@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="report_product_insufficient_template">
+            <t t-call="report.html_container">
+                <t t-call="report.external_layout">
+                    <div class="page">
+                        <div class="row">
+                            <div class="col-md-9"/>
+
+                            <div class="col-md-3 pull-right">
+                                <span style='text-align:right'>
+                                    制表日期:
+                                </span>
+                                <span>
+                                    <t t-esc="date"/>
+                                </span>
+                            </div>
+                        </div>
+                        <h1 style='text-align:center;'>
+                            料件缺料狀況表
+                        </h1>
+
+                        <div class="row">
+                            <p t-if="filter_by == 'date'" style='text-align:left;'>
+                                日期截止：
+                                <t t-esc="date_to"/>
+                            </p>
+                        </div>
+                        <div class="row">
+                            <p t-if="filter_by == 'order_range'" style='text-align:left;'>
+                                製令單號：
+                                <t t-esc="order_from"/>
+                                -
+                                <t t-esc="order_to"/>
+                            </p>
+                        </div>
+                        <div class="row">
+                            <p t-if="filter_by == 'order'" style='text-align:left;'>
+                                製令單號：
+                                <t t-esc="order_names"/>
+                            </p>
+                        </div>
+                        <div class="row">
+                            <p t-if="product_names" style='text-align:left;'>
+                                產品：
+                                <t t-esc="product_names"/>
+                            </p>
+                        </div>
+                        <div class="row">
+                            <table class="table" style="width: 100%;">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            產品編號
+                                            <br/>
+                                            產品名稱
+                                        </th>
+                                        <th style="vertical-align: middle">
+                                            規格
+                                        </th>
+                                        <th>
+                                            現有庫存
+                                            <br/>
+                                            預計入庫
+                                        </th>
+                                        <th style="vertical-align: middle">
+                                            預計領用日
+                                        </th>
+                                        <th style="vertical-align: middle">
+                                            預計用量
+                                        </th>
+                                        <th style="vertical-align: middle">
+                                            累積用量
+                                        </th>
+                                        <th style="vertical-align: middle">
+                                            已發數量
+                                        </th>
+                                        <th style="vertical-align: middle">
+                                            庫存結餘
+                                        </th>
+                                        <th>
+                                            製令單號
+                                            <br/>
+                                            產品名稱
+                                        </th>
+                                        <th>
+                                            訂單編號
+                                            <br/>
+                                            母製令號
+                                        </th>
+                                        <th style="vertical-align: middle">
+                                            領料庫別
+                                        </th>
+                                        <th>
+                                            工藝代碼
+                                            <br/>
+                                            工藝名稱
+                                        </th>
+                                        <th>
+                                            加工廠商
+                                            <br/>
+                                            廠商名稱
+                                        </th>
+                                    </tr>
+                                    <!--<tr>-->
+                                    <!--<th>產品編號</th>-->
+                                    <!--<th></th>-->
+                                    <!--<th>現有庫存</th>-->
+                                    <!--<th></th>-->
+                                    <!--<th></th>-->
+                                    <!--<th></th>-->
+                                    <!--<th></th>-->
+                                    <!--<th></th>-->
+                                    <!--<th>製令單號</th>-->
+                                    <!--<th>訂單編號</th>-->
+                                    <!--<th></th>-->
+                                    <!--<th>工藝代碼</th>-->
+                                    <!--<th>加工廠商</th>-->
+                                    <!--</tr>-->
+                                    <!--<tr style='border-bottom-style:solid;border-width:2px;'>-->
+                                    <!--<th>產品名稱</th>-->
+                                    <!--<th>規格</th>-->
+                                    <!--<th>預計入庫</th>-->
+                                    <!--<th>預計入庫日期</th>-->
+                                    <!--<th>預計用量</th>-->
+                                    <!--<th>累積用量</th>-->
+                                    <!--<th>已發數量</th>-->
+                                    <!--<th>庫存結餘</th>-->
+                                    <!--<th>產品名稱</th>-->
+                                    <!--<th>母製令號</th>-->
+                                    <!--<th>領料庫別</th>-->
+                                    <!--<th>工藝名稱</th>-->
+                                    <!--<th>廠商名稱</th>-->
+                                    <!--</tr>-->
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="lines" t-as="line">
+                                        <tr>
+                                            <td>
+                                                <span>
+                                                    <t t-esc="line.get('product_code',None)"/>
+                                                </span>
+                                                <br/>
+                                                <span>
+                                                    <t t-esc="line.get('product_name',None)"/>
+                                                </span>
+                                            </td>
+                                            <td style="vertical-align: middle">
+                                                <span>
+                                                    <t t-esc="line.get('product_description',None)"/>
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span>
+                                                    <t t-raw="line.get('qty_in_stock_detail_str',None)"/>
+                                                </span>
+                                                <br/>
+                                                <t t-raw="line.get('product_incoming_qty',None)"/>
+                                            </td>
+                                            <td style="vertical-align: middle">
+                                                <t t-esc="line.get('product_planned_take_date',None)"/>
+                                            </td>
+                                            <td style="vertical-align: middle">
+                                                <t t-esc="line.get('product_need_qty',None)"/>
+                                            </td>
+                                            <td style="vertical-align: middle">
+                                                <t t-esc="line.get('product_usage',None)"/>
+                                            </td>
+                                            <td style="vertical-align: middle">
+                                                <t t-esc="line.get('product_qty_put',None)"/>
+                                            </td>
+                                            <td t-attf-style="vertical-align: middle;{{'color:red' if line.get('product_remain_qty',None) &lt; 0 else ''}}">
+                                                <t t-esc="line.get('product_remain_qty',None)"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="line.get('order_name',None)"/>
+                                                <br/>
+                                                <t t-esc="line.get('order_product_name_with_code',None)"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="line.get('order_origin',None)"/>
+                                                <br/>
+                                                <t t-esc="line.get('order_name',None)"/>
+                                            </td>
+                                            <td style="vertical-align: middle">
+                                                <t t-esc="line.get('product_source_location',None)"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="line.get('order_route_code',None)"/>
+                                                <br/>
+                                                <t t-esc="line.get('order_route_name',None)"/>
+                                            </td>
+                                            <td>
+
+                                            </td>
+                                        </tr>
+
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

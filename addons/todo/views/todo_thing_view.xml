@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="todo_thing_view_form" model="ir.ui.view">
+            <field name="name">todo.thing.view.form</field>
+            <field name="model">todo.thing</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <header>
+                        <button name="action_fun1" string="Clear" type="object"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="user_id"/>
+                            <field name="email"/>
+                            <field name="phone"/>
+                            <field name="fax"/>
+                            <field name="content"/>
+                            <field name="tag_ids"/>
+
+                            <field name="order_id"/>
+                        </group>
+                        <group string="testing">
+                            <group>
+                                <field name="field_Boolean"></field>
+                            </group>
+                            <group>
+                                <field name="field_Integer"></field>
+                            </group>
+
+
+                            <field name="field_Date"></field>
+                            <field name="field_Datetime"></field>
+
+
+                        </group>
+                        <notebook>
+                            <page string="page1">
+                                <group>
+                                    <group>
+                                        <field name="field_Float"></field>
+                                    </group>
+                                    <group>
+                                        <field name="field_Text"></field>
+                                    </group>
+
+                                </group>
+
+                            </page>
+                            <page string="page2">
+                                <group>
+                                    <group>
+                                        <field name="field_Selection"></field>
+                                    </group>
+                                    <group>
+                                        <field name="field_Html"></field>
+                                    </group>
+
+                                </group>
+
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="todo_thing_view_tree" model="ir.ui.view">
+            <field name="name">todo.thing.view.tree</field>
+            <field name="model">todo.thing</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="content"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="todo_thing_action" model="ir.actions.act_window">
+            <field name="name">Todo List</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">todo.thing</field>
+            <field name="view_mode">tree,form,graph,kanban</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->
+                </p>
+                <p>
+                    <!-- More details about what a user can do with this object will be OK -->
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="todo_thing_menu_root" name="TODO Root" sequence="1"/>
+        <menuitem id="todo_thing_menu_category" name="TODO Category" parent="todo_thing_menu_root" sequence="1"/>
+        <menuitem id="todo_thing_menu_action_list" name="TODO LIST" parent="todo_thing_menu_category"
+                  action="todo_thing_action" sequence=""/>
+
+
+    </data>
+</openerp>

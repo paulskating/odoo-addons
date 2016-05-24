@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report id="action_report_product_insufficient"
+                model="mrp.production"
+                string="report_product_insufficient"
+                report_type="qweb-html"
+                name="mrp_insufficient_material.report_product_insufficient"
+                file="mrp_insufficient_material.report_product_insufficient"
+                menu="False"/>
+
+        <record id="action_report_product_insufficient" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="mrp_insufficient_material.paperformat_euro_landscape"/>
+        </record>
+
+        <report id="action_report_production_insufficient"
+                model="mrp.production"
+                string="report_production_insufficient"
+                report_type="qweb-html"
+                name="mrp_insufficient_material.report_production_insufficient"
+                file="mrp_insufficient_material.report_production_insufficient"
+                menu="False"/>
+
+        <record id="action_report_production_insufficient" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="mrp_insufficient_material.paperformat_euro_landscape"/>
+        </record>
+    </data>
+</openerp>

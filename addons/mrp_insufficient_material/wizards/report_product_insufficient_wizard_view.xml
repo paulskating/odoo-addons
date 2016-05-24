@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="report_product_insufficient_wizard_view_form" model="ir.ui.view">
+            <field name="name">report_product_insufficient_wizard_view_form</field>
+            <field name="model">mrp_insufficient_material.report_product_insuf_wizard</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <field name="state" invisible="True"/>
+                        <div states="normal">
+                            <h1>料件缺料状况表向导</h1>
+                            <notebook>
+                                <page string="Basic Setting">
+                                    <group col="4">
+                                        <group colspan="2">
+                                            <separator string="Filter Order"/>
+                                            <newline/>
+                                            <field name="filter_by" widget="radio"/>
+
+                                            <separator string="Date" attrs="{'invisible':[('filter_by','!=','date')]}"/>
+                                            <newline/>
+                                            <field name="date_to"
+                                                   attrs="{'invisible':[('filter_by','!=','date')],'required':[('filter_by','=','date')]}"/>
+
+                                            <separator string="Order"
+                                                       attrs="{'invisible':[('filter_by','!=','order')]}"/>
+                                            <newline/>
+                                            <field name="order_ids" widget="many2many_tags"
+                                                   attrs="{'invisible':[('filter_by','!=','order')],'required':[('filter_by','=','order')]}"/>
+
+                                            <separator string="Order Range"
+                                                       attrs="{'invisible':[('filter_by','!=','order_range')]}"/>
+                                            <newline/>
+                                            <field name="order_from"
+                                                   attrs="{'invisible':[('filter_by','!=','order_range')],'required':[('filter_by','=','order_range')]}"/>
+                                            <field name="order_to"
+                                                   attrs="{'invisible':[('filter_by','!=','order_range')],'required':[('filter_by','=','order_range')]}"/>
+
+                                            <separator string="Take Date"/>
+                                            <newline/>
+                                            <field name="take_date"/>
+                                        </group>
+                                        <group colspan="2">
+                                            <separator string="Warehouse"/>
+                                            <newline/>
+                                            <field name="location_ids" widget="many2many_tags"/>
+
+                                            <separator string="Products"/>
+                                            <newline/>
+                                            <field name="product_ids" widget="many2many_tags"/>
+
+                                        </group>
+                                    </group>
+                                </page>
+                                <page string="Advanced Setting">
+                                    <group>
+                                        <field name="only_print_insufficient"/>
+                                        <field name="allow_print_zero_use"/>
+                                    </group>
+                                </page>
+                            </notebook>
+                        </div>
+                        <div states="download_xls">
+                            <h1>下载Excel文件</h1>
+                            <field name="xls_file" readonly="True" filename="xls_file_name"/>
+                        </div>
+                    </sheet>
+                    <footer>
+                        <button type="object" name="action_print" states="normal" string="Print" class="oe_highlight"/>
+                        <button type="object" name="action_download" states="normal" string="Download xls"
+                                class="oe_highlight"/>
+
+                        <button type="object" name="action_back" states="download_xls" string="Back"
+                                class="oe_highlight"/>
+
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="report_product_insufficient_wizard_action" name="Product Insufficient"
+                    res_model="mrp_insufficient_material.report_product_insuf_wizard"
+                    view_mode="form" target="new" multi="False"/>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="report_product_insufficient_menu" name="" parent="mrp_insufficient_material.menu_mrp_report"
+                  action="mrp_insufficient_material.report_product_insufficient_wizard_action"
+                  sequence=""/>
+    </data>
+</openerp>

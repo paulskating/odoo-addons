@@ -1,0 +1,394 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mrp_insufficient_material
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-04-25 00:29+0000\n"
+"PO-Revision-Date: 2016-04-25 08:53+0800\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: zh_TW\n"
+"X-Generator: Poedit 1.7\n"
+
+#. module: mrp_insufficient_material
+#: view:mrp_insufficient_material.report_product_insuf_wizard:mrp_insufficient_material.report_product_insufficient_wizard_view_form
+msgid "Advanced Setting"
+msgstr "進階設定"
+
+#. module: mrp_insufficient_material
+#: field:mrp_insufficient_material.report_product_insuf_wizard,allow_print_zero_use:0
+#: field:mrp_insufficient_material.report_production_insuf_wizard,allow_print_zero_use:0
+msgid "Allow print zero use"
+msgstr "只允許列印為零"
+
+#. module: mrp_insufficient_material
+#: view:mrp_insufficient_material.report_product_insuf_wizard:mrp_insufficient_material.report_product_insufficient_wizard_view_form
+msgid "Back"
+msgstr "返回"
+
+#. module: mrp_insufficient_material
+#: view:mrp_insufficient_material.report_product_insuf_wizard:mrp_insufficient_material.report_product_insufficient_wizard_view_form
+msgid "Basic Setting"
+msgstr "一般設定"
+
+#. module: mrp_insufficient_material
+#: view:mrp_insufficient_material.report_product_insuf_wizard:mrp_insufficient_material.report_product_insufficient_wizard_view_form
+msgid "Cancel"
+msgstr "取消"
+
+#. module: mrp_insufficient_material
+#: field:mrp_insufficient_material.report_product_insuf_wizard,create_uid:0
+#: field:mrp_insufficient_material.report_production_insuf_wizard,create_uid:0
+msgid "Created by"
+msgstr "建立者"
+
+#. module: mrp_insufficient_material
+#: field:mrp_insufficient_material.report_product_insuf_wizard,create_date:0
+#: field:mrp_insufficient_material.report_production_insuf_wizard,create_date:0
+msgid "Created on"
+msgstr "建立時間在"
+
+#. module: mrp_insufficient_material
+#: view:mrp_insufficient_material.report_product_insuf_wizard:mrp_insufficient_material.report_product_insufficient_wizard_view_form
+#: selection:mrp_insufficient_material.report_product_insuf_wizard,filter_by:0
+#: selection:mrp_insufficient_material.report_production_insuf_wizard,filter_by:0
+msgid "Date"
+msgstr "日期"
+
+#. module: mrp_insufficient_material
+#: field:mrp_insufficient_material.report_product_insuf_wizard,date_to:0
+#: field:mrp_insufficient_material.report_production_insuf_wizard,date_to:0
+msgid "Date to"
+msgstr "預計生產排程日"
+
+#. module: mrp_insufficient_material
+#: view:mrp_insufficient_material.report_product_insuf_wizard:mrp_insufficient_material.report_product_insufficient_wizard_view_form
+#: selection:mrp_insufficient_material.report_product_insuf_wizard,state:0
+#: selection:mrp_insufficient_material.report_production_insuf_wizard,state:0
+msgid "Download xls"
+msgstr "匯出Excel文件"
+
+#. module: mrp_insufficient_material
+#: view:mrp_insufficient_material.report_product_insuf_wizard:mrp_insufficient_material.report_product_insufficient_wizard_view_form
+msgid "Filter Order"
+msgstr "篩選生產單"
+
+#. module: mrp_insufficient_material
+#: field:mrp_insufficient_material.report_product_insuf_wizard,filter_by:0
+#: field:mrp_insufficient_material.report_production_insuf_wizard,filter_by:0
+msgid "Filter by"
+msgstr "篩選模式為："
+
+#. module: mrp_insufficient_material
+#: field:mrp_insufficient_material.report_product_insuf_wizard,id:0
+#: field:mrp_insufficient_material.report_production_insuf_wizard,id:0
+#: field:report.mrp_insufficient_material.report_product_insufficient,id:0
+#: field:report.mrp_insufficient_material.report_production_insufficient,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: mrp_insufficient_material
+#: field:mrp_insufficient_material.report_product_insuf_wizard,write_uid:0
+#: field:mrp_insufficient_material.report_production_insuf_wizard,write_uid:0
+msgid "Last Updated by"
+msgstr "最後更新者"
+
+#. module: mrp_insufficient_material
+#: field:mrp_insufficient_material.report_product_insuf_wizard,write_date:0
+#: field:mrp_insufficient_material.report_production_insuf_wizard,write_date:0
+msgid "Last Updated on"
+msgstr "最後更新時間在"
+
+#. module: mrp_insufficient_material
+#: selection:mrp_insufficient_material.report_product_insuf_wizard,state:0
+#: selection:mrp_insufficient_material.report_production_insuf_wizard,state:0
+msgid "Normal"
+msgstr "一般"
+
+#. module: mrp_insufficient_material
+#: field:mrp_insufficient_material.report_product_insuf_wizard,only_print_insufficient:0
+#: field:mrp_insufficient_material.report_production_insuf_wizard,only_print_insufficient:0
+msgid "Only print insufficient"
+msgstr "只列印有缺料的物料"
+
+#. module: mrp_insufficient_material
+#: view:mrp_insufficient_material.report_product_insuf_wizard:mrp_insufficient_material.report_product_insufficient_wizard_view_form
+#: selection:mrp_insufficient_material.report_product_insuf_wizard,filter_by:0
+#: selection:mrp_insufficient_material.report_production_insuf_wizard,filter_by:0
+msgid "Order"
+msgstr "生產單號"
+
+#. module: mrp_insufficient_material
+#: view:mrp_insufficient_material.report_product_insuf_wizard:mrp_insufficient_material.report_product_insufficient_wizard_view_form
+#: selection:mrp_insufficient_material.report_product_insuf_wizard,filter_by:0
+#: selection:mrp_insufficient_material.report_production_insuf_wizard,filter_by:0
+msgid "Order Range"
+msgstr "生產單號區間"
+
+#. module: mrp_insufficient_material
+#: field:mrp_insufficient_material.report_product_insuf_wizard,order_from:0
+#: field:mrp_insufficient_material.report_production_insuf_wizard,order_from:0
+msgid "Order from"
+msgstr "生產單號，啟始號碼"
+
+#. module: mrp_insufficient_material
+#: field:mrp_insufficient_material.report_product_insuf_wizard,order_to:0
+#: field:mrp_insufficient_material.report_production_insuf_wizard,order_to:0
+msgid "Order to"
+msgstr "生產單號，結束號碼"
+
+#. module: mrp_insufficient_material
+#: field:mrp_insufficient_material.report_product_insuf_wizard,order_ids:0
+#: field:mrp_insufficient_material.report_production_insuf_wizard,order_ids:0
+msgid "Orders"
+msgstr "多選的生產單號"
+
+#. module: mrp_insufficient_material
+#: view:mrp_insufficient_material.report_product_insuf_wizard:mrp_insufficient_material.report_product_insufficient_wizard_view_form
+msgid "Print"
+msgstr "列印"
+
+#. module: mrp_insufficient_material
+#: model:ir.actions.act_window,name:mrp_insufficient_material.report_product_insufficient_wizard_action
+#: model:ir.ui.menu,name:mrp_insufficient_material.report_product_insufficient_menu
+msgid "Product Insufficient"
+msgstr "料件缺料狀況分析表"
+
+#. module: mrp_insufficient_material
+#: model:ir.actions.act_window,name:mrp_insufficient_material.report_production_insufficient_wizard_action
+#: model:ir.ui.menu,name:mrp_insufficient_material.report_production_insufficient_menu
+msgid "Production Insufficient"
+msgstr "製令缺料狀況表"
+
+#. module: mrp_insufficient_material
+#: view:mrp_insufficient_material.report_product_insuf_wizard:mrp_insufficient_material.report_product_insufficient_wizard_view_form
+#: field:mrp_insufficient_material.report_product_insuf_wizard,product_ids:0
+#: field:mrp_insufficient_material.report_production_insuf_wizard,product_ids:0
+msgid "Products"
+msgstr "產品"
+
+#. module: mrp_insufficient_material
+#: help:mrp_insufficient_material.report_product_insuf_wizard,product_ids:0
+#: help:mrp_insufficient_material.report_production_insuf_wizard,product_ids:0
+msgid "Products the production produce."
+msgstr "Products the production produce."
+
+#. module: mrp_insufficient_material
+#: model:ir.ui.menu,name:mrp_insufficient_material.menu_mrp_report
+msgid "Report"
+msgstr "報表"
+
+#. module: mrp_insufficient_material
+#: field:mrp_insufficient_material.report_product_insuf_wizard,state:0
+#: field:mrp_insufficient_material.report_production_insuf_wizard,state:0
+msgid "State"
+msgstr "狀態"
+
+#. module: mrp_insufficient_material
+#: field:mrp_insufficient_material.report_product_insuf_wizard,location_ids:0
+#: field:mrp_insufficient_material.report_production_insuf_wizard,location_ids:0
+msgid "Stock Locations"
+msgstr "生產庫位"
+
+#. module: mrp_insufficient_material
+#: view:mrp_insufficient_material.report_product_insuf_wizard:mrp_insufficient_material.report_product_insufficient_wizard_view_form
+msgid "Take Date"
+msgstr "預計(模擬)領用日"
+
+#. module: mrp_insufficient_material
+#: field:mrp_insufficient_material.report_product_insuf_wizard,take_date:0
+#: field:mrp_insufficient_material.report_production_insuf_wizard,take_date:0
+msgid "Take date"
+msgstr "預計(模擬)領用日"
+
+#. module: mrp_insufficient_material
+#: view:mrp_insufficient_material.report_product_insuf_wizard:mrp_insufficient_material.report_product_insufficient_wizard_view_form
+msgid "Warehouse"
+msgstr "生產庫別"
+
+#. module: mrp_insufficient_material
+#: field:mrp_insufficient_material.report_product_insuf_wizard,xls_file:0
+#: field:mrp_insufficient_material.report_production_insuf_wizard,xls_file:0
+msgid "Xls file"
+msgstr "Excel 檔案"
+
+#. module: mrp_insufficient_material
+#: field:mrp_insufficient_material.report_product_insuf_wizard,xls_file_name:0
+#: field:mrp_insufficient_material.report_production_insuf_wizard,xls_file_name:0
+msgid "Xls file name"
+msgstr "Excel 檔案名稱"
+
+#. module: mrp_insufficient_material
+#: model:ir.actions.report.xml,name:mrp_insufficient_material.action_report_product_insufficient
+msgid "report_product_insufficient"
+msgstr "report_product_insufficient"
+
+#. module: mrp_insufficient_material
+#: model:ir.actions.report.xml,name:mrp_insufficient_material.action_report_production_insufficient
+msgid "report_production_insufficient"
+msgstr "report_production_insufficient"
+
+#. module: mrp_insufficient_material
+#: view:mrp_insufficient_material.report_product_insuf_wizard:mrp_insufficient_material.report_product_insufficient_wizard_view_form
+msgid "下载Excel文件"
+msgstr "下载Excel文件"
+
+#. module: mrp_insufficient_material
+#: code:addons/mrp_insufficient_material/wizards/report_product_insufficient_wizard.py:87
+#, python-format
+msgid "出勤明细表.xls"
+msgstr "出勤明细表.xls"
+
+#. module: mrp_insufficient_material
+#: view:website:mrp_insufficient_material.report_production_insufficient_template
+msgid "制令缺料状况表"
+msgstr "制令缺料状况表"
+
+#. module: mrp_insufficient_material
+#: view:mrp_insufficient_material.report_production_insuf_wizard:mrp_insufficient_material.report_production_insufficient_wizard_view_form
+msgid "制令缺料状况表向导"
+msgstr "制令缺料状况表向导"
+
+#. module: mrp_insufficient_material
+#: view:website:mrp_insufficient_material.report_product_insufficient_template
+#: view:website:mrp_insufficient_material.report_production_insufficient_template
+msgid "制表日期:"
+msgstr "制表日期:"
+
+#. module: mrp_insufficient_material
+#: view:website:mrp_insufficient_material.report_product_insufficient_template
+msgid "加工廠商"
+msgstr "加工廠商"
+
+#. module: mrp_insufficient_material
+#: view:website:mrp_insufficient_material.report_product_insufficient_template
+msgid "工藝代碼"
+msgstr "工藝代碼"
+
+#. module: mrp_insufficient_material
+#: view:website:mrp_insufficient_material.report_product_insufficient_template
+msgid "工藝名稱"
+msgstr "工藝名稱"
+
+#. module: mrp_insufficient_material
+#: view:website:mrp_insufficient_material.report_product_insufficient_template
+msgid "已發數量"
+msgstr "已發數量"
+
+#. module: mrp_insufficient_material
+#: view:website:mrp_insufficient_material.report_product_insufficient_template
+msgid "庫存結餘"
+msgstr "庫存結餘"
+
+#. module: mrp_insufficient_material
+#: view:website:mrp_insufficient_material.report_product_insufficient_template
+msgid "廠商名稱"
+msgstr "廠商名稱"
+
+#. module: mrp_insufficient_material
+#: view:mrp_insufficient_material.report_product_insuf_wizard:mrp_insufficient_material.report_product_insufficient_wizard_view_form
+msgid "料件缺料状况表向导"
+msgstr "料件缺料状况表向导"
+
+#. module: mrp_insufficient_material
+#: view:website:mrp_insufficient_material.report_product_insufficient_template
+msgid "料件缺料狀況表"
+msgstr "料件缺料狀況表"
+
+#. module: mrp_insufficient_material
+#: view:website:mrp_insufficient_material.report_product_insufficient_template
+msgid "日期截止："
+msgstr "日期截止："
+
+#. module: mrp_insufficient_material
+#: view:website:mrp_insufficient_material.report_production_insufficient_template
+msgid "材料品號"
+msgstr "材料品號"
+
+#. module: mrp_insufficient_material
+#: view:website:mrp_insufficient_material.report_production_insufficient_template
+msgid "欠料數量"
+msgstr "欠料數量"
+
+#. module: mrp_insufficient_material
+#: view:website:mrp_insufficient_material.report_product_insufficient_template
+msgid "母製令號"
+msgstr "母製令號"
+
+#. module: mrp_insufficient_material
+#: view:website:mrp_insufficient_material.report_product_insufficient_template
+#: view:website:mrp_insufficient_material.report_production_insufficient_template
+msgid "現有庫存"
+msgstr "現有庫存"
+
+#. module: mrp_insufficient_material
+#: view:website:mrp_insufficient_material.report_product_insufficient_template
+msgid "產品名稱"
+msgstr "產品名稱"
+
+#. module: mrp_insufficient_material
+#: view:website:mrp_insufficient_material.report_product_insufficient_template
+msgid "產品編號"
+msgstr "產品編號"
+
+#. module: mrp_insufficient_material
+#: view:website:mrp_insufficient_material.report_product_insufficient_template
+msgid "產品："
+msgstr "產品："
+
+#. module: mrp_insufficient_material
+#: view:website:mrp_insufficient_material.report_product_insufficient_template
+msgid "累積用量"
+msgstr "累積用量"
+
+#. module: mrp_insufficient_material
+#: view:website:mrp_insufficient_material.report_product_insufficient_template
+msgid "製令單號"
+msgstr "製令單號"
+
+#. module: mrp_insufficient_material
+#: view:website:mrp_insufficient_material.report_product_insufficient_template
+msgid "製令單號："
+msgstr "製令單號："
+
+#. module: mrp_insufficient_material
+#: view:website:mrp_insufficient_material.report_production_insufficient_template
+msgid "製令編號"
+msgstr "製令編號"
+
+#. module: mrp_insufficient_material
+#: view:website:mrp_insufficient_material.report_product_insufficient_template
+msgid "訂單編號"
+msgstr "訂單編號"
+
+#. module: mrp_insufficient_material
+#: view:website:mrp_insufficient_material.report_production_insufficient_template
+msgid "逾期未入"
+msgstr "逾期未入"
+
+#. module: mrp_insufficient_material
+#: view:website:mrp_insufficient_material.report_product_insufficient_template
+msgid "預計入庫"
+msgstr "預計入庫"
+
+#. module: mrp_insufficient_material
+#: view:website:mrp_insufficient_material.report_product_insufficient_template
+msgid "預計用量"
+msgstr "預計用量"
+
+#. module: mrp_insufficient_material
+#: view:website:mrp_insufficient_material.report_product_insufficient_template
+msgid "預計領用日"
+msgstr "預計領用日"
+
+#. module: mrp_insufficient_material
+#: view:website:mrp_insufficient_material.report_product_insufficient_template
+msgid "領料庫別"
+msgstr "領料庫別"

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="lesson_view_tree" model="ir.ui.view">
+            <field name="name">lesson.view.tree</field>
+            <field name="model">lesson</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="le_name"/>
+                    <field name="teacher_id"/>
+                    <field name="le_credit"/>
+                </tree>
+            </field>
+        </record>
+        <record id="lesson_view_form" model="ir.ui.view">
+            <field name="name">lesson.view.form</field>
+            <field name="model">lesson</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="le_name"/>
+                            <field name="teacher_id"/>
+                            <field name="le_credit"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

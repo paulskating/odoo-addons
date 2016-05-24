@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_employee_form" model="ir.ui.view">
+            <field name="name">hr.employee.form</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <h1 position="after">
+                    <label for="internal_code" class="oe_edit_only"/>
+                    <field name="internal_code"/>
+                </h1>
+                <xpath expr="//page[3]/group" position="after">
+                    <group string="Others">
+                        <field name="card_code"/>
+                        <field name="responsibility"/>
+                    </group>
+                    <group>
+
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_employee_tree" model="ir.ui.view">
+            <field name="name">hr.employee.tree</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_tree"/>
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="internal_code"/>
+                </field>
+
+                <xpath expr="/tree" position="attributes">
+                    <attribute name="default_order">department_id</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_employee_filter" model="ir.ui.view">
+            <field name="name">view_employee_filter</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_filter"/>
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="internal_code"/>
+                </field>
+              <!--  <xpath expr="//search" position="inside">
+                    <field name="internal_code"/>
+                </xpath>-->
+
+            </field>
+        </record>
+    </data>
+</openerp>

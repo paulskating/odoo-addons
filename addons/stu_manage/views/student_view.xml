@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="stu_student_view_tree" model="ir.ui.view">
+            <field name="name">stu.student.view.tree</field>
+            <field name="model">stu.student</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="stu_no"/>
+                    <field name="stu_name"/>
+                </tree>
+            </field>
+        </record>
+        <record id="stu_student_view_form" model="ir.ui.view">
+            <field name="name">stu_student.view.form</field>
+            <field name="model">stu.student</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="stu_no"/>
+                            <field name="stu_name"/>
+                            <field name="stu_age"/>
+                            <field name="stu_email"/>
+                            <field name="stu_birthday"/>
+                            <field name="s_teacher_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="stu_student_action" model="ir.actions.act_window">
+            <field name="name">Student List</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stu.student</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+              </p><p>
+                <!-- More details about what a user can do with this object will be OK -->
+              </p>
+            </field>
+        </record>
+        <record id="lesson_action" model="ir.actions.act_window">
+            <field name="name">Lesson List</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">lesson</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+              </p><p>
+                <!-- More details about what a user can do with this object will be OK -->
+              </p>
+            </field>
+        </record>
+        <record id="teacher_action" model="ir.actions.act_window">
+            <field name="name">Teacher List</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">teacher</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+              </p><p>
+                <!-- More details about what a user can do with this object will be OK -->
+              </p>
+            </field>
+        </record>
+        <menuitem id="stu_student_menu_root" name="Student Manage" sequence="1"/>
+        <menuitem id="stu_student_menu_category" name="Configuration" parent="stu_student_menu_root" sequence="1"/>
+        <menuitem id="stu_student_action_list" name="Student" parent="stu_student_menu_category"
+                  action="stu_student_action" sequence=""/>
+        <menuitem id="lesson_action_list" name="Lesson" parent="stu_student_menu_category" action="lesson_action"
+                  sequence=""/>
+        <menuitem id="teacher_action_list" name="Teacher" parent="stu_student_menu_category" action="teacher_action"
+                  sequence=""/>
+    </data>
+</openerp>

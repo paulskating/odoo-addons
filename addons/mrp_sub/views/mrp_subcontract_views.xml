@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="subcontract_view_form" model="ir.ui.view">
+            <field name="name">subcontract.view.form</field>
+            <field name="model">mrp.subcontract</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <header>
+                        <button name="action_confirm" string="Confirm" class="oe_highlight" states="draft"
+                                type="object"/>
+                        <button name="create_invoice" string="Create Invoice" class="oe_highlight" states="draft"
+                                type="object"/>
+                        <button name="action_wizard_create_out_picking" type="object" string="Create Out Picking"/>
+
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <label string="Subcontract Order"/>
+                                <field name="name" class="oe_inline" readonly="1"/>
+                            </h1>
+                        </div>
+                        <div class="oe_right oe_button_box">
+                            <button type="object"
+                                    name="action_view_picking_out"
+                                    class="oe_inline oe_stat_button"
+                                    icon="fa-truck"
+                                    groups="base.group_user"
+                                    attrs="{'invisible':[('out_picking_count','&lt;=',0)]}">
+                                <field string="Out Pickings" name="out_picking_count"
+                                       widget="statinfo"/>
+                            </button>
+                            <button type="object"
+                                    name="action_view_picking_in"
+                                    class="oe_inline oe_stat_button"
+                                    icon="fa-truck fa-flip-horizontal"
+                                    groups="base.group_user"
+                                    attrs="{'invisible':[('in_picking_count','&lt;=',0)]}">
+                                <field string="In Pickings" name="in_picking_count"
+                                       widget="statinfo"/>
+                            </button>
+                            <button type="object"
+                                    name="action_view_invoices"
+                                    class="oe_inline oe_stat_button"
+                                    icon="fa fa-pencil-square-o fa-fw"
+                                    groups="base.group_user"
+                                    attrs="{'invisible':[('invoice_count','&lt;=',0)]}">
+                                <field string="Invoices" name="invoice_count"
+                                       widget="statinfo"/>
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="partner_id"/>
+                            </group>
+                            <group>
+                                <field name="order_date"/>
+                                <field name="origin"/>
+                            </group>
+                            <newline/>
+                            <group>
+                                <field name="location_src_id"/>
+                                <field name="location_partner_production_id"/>
+                                <field name="location_dest_id"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Products">
+                                <field name="line_ids">
+                                    <tree editable="bottom">
+                                        <field name="product_id"/>
+                                        <field name="product_uom_id"/>
+                                        <field name="unit_price"/>
+                                        <field name="product_uom_qty"/>
+                                        <field name="schedule_date"/>
+                                        <field name="bom_id" domain="['|',('product_id','=',product_id),'&amp;',('product_tmpl_id.product_variant_ids','=',product_id),('product_id','=',False)]"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Scheduled Products">
+                                <field name="scheduled_products_ids"
+                                       context="{'tree_view_ref':'mrp_sub.view_move_subcontract_tree'}">
+                                    <!--<tree>-->
+                                    <!--<field name="product_id"/>-->
+                                    <!--<field name="product_uom_qty"/>-->
+                                    <!--<field name="product_uom_id"/>-->
+                                    <!--</tree>-->
+                                </field>
+                            </page>
+                            <page string="Deliveries &amp; Invoices">
+                                <group>
+                                    <group>
+                                        <field name="minimum_planned_data"/>
+                                    </group>
+                                    <group>
+                                        <field name="invoice_method"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="subcontract_view_tree" model="ir.ui.view">
+            <field name="name">subcontract.view.tree</field>
+            <field name="model">mrp.subcontract</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="name"/>
+                    <field name="order_date"/>
+                    <field name="origin"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="mrp_subcontract_action_list" model="ir.actions.act_window">
+            <field name="name">Subcontract Orders</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mrp.subcontract</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->
+                </p>
+                <p>
+                    <!-- More details about what a user can do with this object will be OK -->
+                </p>
+            </field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="mrp_subcontract_menu_subcontract_orders" name="Subcontract Orders"
+                  parent="mrp.menu_mrp_manufacturing"
+                  action="mrp_sub.mrp_subcontract_action_list" sequence="20"/>
+    </data>
+</openerp>

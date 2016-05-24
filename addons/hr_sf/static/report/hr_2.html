@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <head>
+        <!-- 新 Bootstrap 核心 CSS 文件 -->
+        <link rel="stylesheet" href="/hr_sf/static/src/css/bootstrap.min.css"/>
+
+        <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+        <link rel="stylesheet" href="/hr_sf/static/src/css/bootstrap-theme.min.css"/>
+
+        <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+        <script src="/hr_sf/static/src/js/jquery-1.12.1.min.js"></script>
+
+        <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+        <script src="/hr_sf/static/src/js/bootstrap.min.js"></script>
+    </head>
+</head>
+<body>
+<div class="header">
+	<div class='header'>
+		
+	</div>
+	<div class='page'>
+		<h2><span />~<span />出勤明細表</h2>
+		<div class='row'>
+			<div class='col-xs-3'>標準出勤時間：<span />~<span /></div>
+			<div class='col-xs-3'>加班來源：<span>員工出勤 加班單</span></div>
+
+			<div class='col-xs-3'>假日出勤：<span>含假日 僅假日</span></div>
+			<div class='col-xs-2 pull-right'>列印時間：<span t-esc="datetime.date.today()" /></div>
+		</div>
+		<div class='row'>
+			<div class='col-xs-3'>員工區間：<span />~<span /></div>
+			<div class='col-xs-3'>請假來源：<span>員工出勤 請假單</span></div>
+			<div class='col-xs-3'>假別名稱：<span>中文 外文</span></div>
+			<div class='col-xs-2 pull-right'>
+                <ul class="list-inline">
+                    <li>頁次：</li>
+                    <li><span class="page" /></li>
+                    <li>/</li>
+                    <li><span class="topage" /></li>
+                </ul>
+            </div>
+		</div>
+
+		<table class="table table-bordered">
+
+			<tr>
+				<td rowspan='2'>部門代號</td>
+				<td rowspan='2'>部門名稱</td>
+				<td rowspan='2'>員工代號</td>
+				<td rowspan='2'>員工姓名</td>
+				<td rowspan='2'>出勤日期</td>
+
+				<td colspan='3'>實際出勤時間</td>
+				<td colspan='3'>考勤狀況(分)/(次)</td>
+				<td rowspan='2'>加班時數</td>
+				<td rowspan='2'>請假時數</td>
+				<td rowspan='2'>開始時間</td>
+				<td rowspan='2'>結束時間</td>
+
+			</tr>
+			<tr>
+
+				<td >上班</td>
+				<td >下班</td>
+				<td >工時</td>
+				<td >遲到</td>
+				<td >早退</td>
+				<td >忘卡</td>
+			</tr>
+			<tr>
+
+				<td ></td>
+				<td ></td>
+				<td ></td>
+				<td ></td>
+				<td ></td>
+				<td ></td>
+				<td ></td>
+				<td ></td>
+				<td ></td>
+				<td ></td>
+				<td ></td>
+				<td ></td>
+				<td ></td>
+				<td ></td>
+				<td ></td>
+
+			</tr>
+		</table>
+	</div>
+
+
+
+
+	</div>
+</body>
+</html>

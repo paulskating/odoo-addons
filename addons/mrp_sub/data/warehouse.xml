@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="wh_subcontract" model="stock.warehouse">
+            <field name="name">Subcontract Warhouse</field>
+            <field name="code">sub</field>
+        </record>
+    </data>
+</openerp>

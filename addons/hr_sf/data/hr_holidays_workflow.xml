@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- 2. submitted->accepted (validate signal) if not double_validation-->
+        <record id="hr_holidays.holiday_confirm2validate1" model="workflow.transition">
+            <field name="condition">True</field>
+        </record>
+
+        <delete id="hr_holidays.holiday_confirm2validate" model="workflow.transition"/>
+
+        <record id="hr_holidays.holiday_validate1_validate" model="workflow.transition">
+            <field name="act_from" ref="hr_holidays.act_validate1" />
+            <field name="act_to" ref="hr_holidays.act_validate" />
+            <field name="condition">leave_duration &lt; 16</field>
+            <field name="signal"></field>
+            <field name="group_id" ref="base.group_hr_user"/>
+        </record>
+
+        <record id="hr_holidays.holiday_validate1_validate_2" model="workflow.transition">
+            <field name="act_from" ref="hr_holidays.act_validate1" />
+            <field name="act_to" ref="hr_holidays.act_validate" />
+            <field name="condition">leave_duration &gt;= 16</field>
+            <field name="signal">second_validate</field>
+            <field name="group_id" ref="base.group_hr_user"/>
+        </record>
+    </data>
+</openerp>

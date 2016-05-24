@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="report_production_insufficient_template">
+            <t t-call="report.html_container">
+                <t t-call="report.external_layout">
+                    <div class="page">
+                        <h1>制令缺料状况表</h1>
+                        <p>
+                            <span>制表日期:</span>
+                        </p>
+                        <div class="row">
+                            <table class="table" style="width: 100%;">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            材料品號
+                                        </th>
+                                        <th>
+                                            品名
+                                        </th>
+                                        <th>
+                                            規格
+                                        </th>
+                                        <th>
+                                            單位
+                                        </th>
+                                        <th>
+                                            製令編號
+                                        </th>
+                                        <th>
+                                            欠料數量
+                                        </th>
+                                        <th>
+                                            現有庫存
+                                        </th>
+                                        <th>
+                                            逾期未入
+                                        </th>
+                                    </tr>
+
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="lines" t-as="key">
+                                        <tr>
+                                            <td>
+                                                <t t-esc="key[1]"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="key[2]"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="key[3]"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="key[4]"/>
+                                            </td>
+                                            <td>
+                                                <t t-foreach="lines[key]" t-as="l">
+                                                    <t t-esc="l['order_name']"/>
+                                                    <t t-if="not l_last">
+                                                        <br/>
+                                                    </t>
+                                                </t>
+                                            </td>
+                                            <td>
+                                                <t t-foreach="lines[key]" t-as="l">
+                                                    <t t-esc="l['lack_qty']"/>
+                                                    <t t-if="not l_last">
+                                                        <br/>
+                                                    </t>
+                                                </t>
+                                            </td>
+                                            <td>
+                                                <t t-esc="key[5]"/>
+                                            </td>
+                                            <td>
+                                                <t t-raw="key[6]"/>
+                                            </td>
+
+                                        </tr>
+
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

@@ -1,0 +1,2 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+overtime_all_access,overtime all access,hr_sf.model_hr_sf_overtime,base.group_user,1,1,1,1

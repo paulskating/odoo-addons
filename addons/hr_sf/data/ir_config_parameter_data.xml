@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="morning_start_work_time" model = "ir.config_parameter">
+            <field name="key">morning_start_work_time</field>
+            <field name="value">08:00:00</field>
+        </record>
+        <record id="morning_end_work_time" model = "ir.config_parameter">
+            <field name="key">morning_end_work_time</field>
+            <field name="value">12:00:00</field>
+        </record>
+        <record id="afternoon_start_work_time" model = "ir.config_parameter">
+            <field name="key">afternoon_start_work_time</field>
+            <field name="value">13:00:00</field>
+        </record>
+        <record id="afternoon_end_work_time" model = "ir.config_parameter">
+            <field name="key">afternoon_end_work_time</field>
+            <field name="value">17:00:00</field>
+        </record>
+
+        <record id="night_overtime_start_time" model = "ir.config_parameter">
+            <field name="key">night_overtime_start_time</field>
+            <field name="value">17:40:00</field>
+        </record>
+        <record id="night_overtime_middle_time" model = "ir.config_parameter">
+            <field name="key">night_overtime_middle_time</field>
+            <field name="value">19:40:00</field>
+        </record>
+        <record id="night_overtime_end_time" model = "ir.config_parameter">
+            <field name="key">night_overtime_end_time</field>
+            <field name="value">20:40:00</field>
+        </record>
+    </data>
+</openerp>

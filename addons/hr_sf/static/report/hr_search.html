@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <head>
+        <!-- 新 Bootstrap 核心 CSS 文件 -->
+        <link rel="stylesheet" href="/hr_sf/static/src/css/bootstrap.min.css"/>
+
+        <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+        <link rel="stylesheet" href="/hr_sf/static/src/css/bootstrap-theme.min.css"/>
+
+        <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+        <script src="/hr_sf/static/src/js/jquery-1.12.1.min.js"></script>
+
+        <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+        <script src="/hr_sf/static/src/js/bootstrap.min.js"></script>
+    </head>
+</head>
+<body>
+<div class="header">
+    <div class='header'>
+        <div class="row">
+            <div class="col-xs-7">
+                <form class="navbar-form">
+                    <div class="form-group">
+                        <label>出勤日期區間</label><input type="date" class='span2'/>~<input type='date' class='span2'/>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">部門別</label>
+                        <select class="form-control">
+                            <option>業務部</option>
+                            <option>物料部</option>
+                            <option>包裝部</option>
+                            <option>財務部</option>
+                            <option>製造部</option>
+                            <option>資訊部</option>
+                            <option>生管部</option>
+                            <option>採購部</option>
+                            <option>開發部</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>員工代號區間</label><input type='text' class='span2'/>~<input type='text' class='span2'/>
+                    </div>
+                    <div class="form-group">
+                        出勤查核狀況
+                        <label><input type="checkbox" value="">全部</input></label>
+                        <label><input type="checkbox" value="">遲到</input></label>
+                        <label><input type="checkbox" value="">早退</input></label>
+                        <label><input type="checkbox" value="">忘打卡</input></label>
+                        <label><input type="checkbox" value="">補單</input></label>
+                        <label><input type="checkbox" value="">未出勤</input></label>
+                        <label><input type="checkbox" value="">刷卡異常</input></label>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="col-xs-5">
+                <div class="btn-group">
+
+                    <button class='btn'>清除</button>
+                    <button type="submit" class='btn'>搜尋</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+	
+
+
+

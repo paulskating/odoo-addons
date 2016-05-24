@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data>
+        <record id="view_attendance_form" model="ir.ui.view">
+            <field name="name">hr.attendance.form</field>
+            <field name="model">hr.attendance</field>
+            <field name="inherit_id" ref="hr_attendance.view_attendance_form"/>
+            <field name="arch" type="xml">
+                <field name="employee_id" position="after">
+                    <field name="code"/>
+                </field>
+
+                <field name="action" position="before">
+                    <field name="location"/>
+                </field>
+
+                <group position="inside">
+                    <field name="forget_card" groups="base.group_no_one"/>
+                    <!--<field name="late_minutes" groups="base.group_no_one"/>-->
+                    <!--<field name="early_minutes" groups="base.group_no_one"/>-->
+                    <field name="overtime_hours" groups="base.group_no_one"/>
+                    <field name="morning_start_work_time" groups="base.group_no_one"/>
+                    <field name="morning_end_work_time" groups="base.group_no_one"/>
+                    <field name="afternoon_start_work_time" groups="base.group_no_one"/>
+                    <field name="afternoon_end_work_time" groups="base.group_no_one"/>
+                </group>
+            </field>
+        </record>
+
+        <record id="view_attendance_who" model="ir.ui.view">
+            <field name="name">hr.attendance.tree</field>
+            <field name="model">hr.attendance</field>
+            <field name="inherit_id" ref="hr_attendance.view_attendance_who"/>
+            <field name="arch" type="xml">
+                <field name="action" position="before">
+                    <field name="location"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="url_action_attendance_manual_upload" model="ir.actions.act_url">
+            <field name="name">Manual Upload</field>
+            <field name="url">/hr_sf/attendance</field>
+            <field name="target">new</field>
+        </record>
+
+        <record id="url_action_attendance_per_location" model="ir.actions.act_url">
+            <field name="name">action_attendance_detail</field>
+            <field name="url">/hr_sf/report/per_location</field>
+            <!--<field name="url">ftp://baidu.com/</field>-->
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="attendance_report_cate" name="Reports" parent="hr_attendance.menu_hr_attendance" sequence="110"/>
+
+        <menuitem id="attendance_report_per_location" name="Daily" parent="attendance_report_cate" action="url_action_attendance_per_location" sequence="1"/>
+
+        <menuitem id="attendance_manual_upload_menu" name="Manual Upload" parent="hr_attendance.menu_hr_attendance" action="url_action_attendance_manual_upload" sequence="90"/>
+
+    </data>
+</openerp>

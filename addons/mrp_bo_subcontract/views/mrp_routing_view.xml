@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="mrp_routing_form_view" model="ir.ui.view">
+            <field name="name">mrp.routing.form</field>
+            <field name="model">mrp.routing</field>
+            <field name="inherit_id" ref="mrp.mrp_routing_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='location_id']" position="after">
+                    <field name="is_create_picking"/>
+                    <field name="picking_type_id"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
