@@ -24,7 +24,10 @@
                             <page string="Bank_line">
                                 <field name="order_line">
                                     <tree editable="bottom">
-                                            <field name="bank_id"/>
+                                        <field name="bank_id"/>
+                                        <field name="begin"/>
+                                        <field name="end"/>
+                                        <field name="account"/>
                                     </tree>
                                 </field>
                             </page>
@@ -40,11 +43,12 @@
             <field name="res_model">myhome.order</field>
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">
-              <p class="oe_view_nocontent_create">
-                <!-- Add Text Here -->
-              </p><p>
-                <!-- More details about what a user can do with this object will be OK -->
-              </p>
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->
+                </p>
+                <p>
+                    <!-- More details about what a user can do with this object will be OK -->
+                </p>
             </field>
         </record>
 
