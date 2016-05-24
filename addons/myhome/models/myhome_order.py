@@ -7,8 +7,7 @@ class MyhomeOrder(models.Model):
 
     order_date = fields.Date()
     state = fields.Char()
-    order_line = fields.One2many("myhome.order_line", "order_id",
-                                 string="Order Lines")
+    order_line = fields.One2many("myhome.order_line", "order_id")
 
     @api.multi
     def action_confirm(self):
