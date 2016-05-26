@@ -30,6 +30,7 @@
                                         <field name="account"/>
                                     </tree>
                                 </field>
+                                <field name="notes"/>
                             </page>
                         </notebook>
                     </sheet>
