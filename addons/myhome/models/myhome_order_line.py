@@ -9,6 +9,7 @@ class MyhomeOrderLine(models.Model):
     begin = fields.Float()
     end = fields.Float()
     account = fields.Float(compute="_compute_account")
+    a = fields.Monetary
     @api.multi
     def _compute_account(self):
         for line in self:
