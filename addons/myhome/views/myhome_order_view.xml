@@ -30,7 +30,15 @@
                                         <field name="account"/>
                                     </tree>
                                 </field>
-                                <field name="notes"/>
+                                <group class="oe_subtotal_footer oe_right">
+                                    <field name="untaxed"/>
+                                    <field name="tax"/>
+                                    <div class="oe_subtotal_footer_separator oe_inline">
+                                        <label for="total"/>
+                                    </div>
+                                    <field name="total" nolabel="1" class="oe_subtotal_footer_separator"/>
+                                </group>
+                                <field name="notes" class="oe_inline"/>
                             </page>
                         </notebook>
                     </sheet>
